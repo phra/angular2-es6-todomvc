@@ -20,6 +20,7 @@ export class Todo {
 
 export class TodoLocalStore {
   todos = [];
+  _servizio;
 
   constructor() {
     let persistedTodos = JSON.parse(localStorage.getItem('angular2-todos')) || [];

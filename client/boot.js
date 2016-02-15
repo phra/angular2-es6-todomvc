@@ -6,6 +6,7 @@ import {bootstrap} from 'angular2/platform/browser';
 import {enableProdMode, provide} from 'angular2/core';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {TodoLocalStore} from './app/services/store';
+import {Servizio} from './app/services/servizio';
 import {App} from './app/components/app';
 
 if (ENVIRONMENT == 'production') {
@@ -13,6 +14,7 @@ if (ENVIRONMENT == 'production') {
 }
 bootstrap(App, [
   TodoLocalStore,
+  Servizio,
   ROUTER_PROVIDERS,
   provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);

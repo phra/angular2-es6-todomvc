@@ -2,20 +2,23 @@
 import {Component, Inject} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 import {TodoLocalStore} from '../services/store';
+import {Servizio} from '../services/servizio';
 import todoTemplate from './todo.html';
 import {TodoHeader} from './todo_header';
 import {TodoFooter} from './todo_footer';
 import {TodoItem} from './todo_item';
+import {Count} from './count';
 
 @Component({
   selector: 'todo',
   template: todoTemplate,
-  directives: [TodoHeader, TodoFooter, TodoItem]
+  directives: [TodoHeader, TodoFooter, TodoItem, Count]
 })
 export class Todo {
-  constructor(todoStore: TodoLocalStore, params: RouteParams) {
+  constructor(todoStore: TodoLocalStore, params: RouteParams, servizio: Servizio) {
     this._todoStore = todoStore;
     this._params = params;
+    this._servizio = servizio;
   }
 
   remove(uid) {
@@ -45,5 +48,9 @@ export class Todo {
 
   setAllTo(toggleAll) {
     this._todoStore.setAllTo(toggleAll.checked);
+  }
+
+  inc() {
+    this._servizio.inc();
   }
 }
