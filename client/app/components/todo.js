@@ -8,11 +8,12 @@ import {TodoHeader} from './todo_header';
 import {TodoFooter} from './todo_footer';
 import {TodoItem} from './todo_item';
 import {Count} from './count';
+import {AjaxComponent} from './ajax-component';
 
 @Component({
   selector: 'todo',
   template: todoTemplate,
-  directives: [TodoHeader, TodoFooter, TodoItem, Count]
+  directives: [TodoHeader, TodoFooter, TodoItem, Count, AjaxComponent]
 })
 export class Todo {
   constructor(todoStore: TodoLocalStore, params: RouteParams, servizio: Servizio) {
