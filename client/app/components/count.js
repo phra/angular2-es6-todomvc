@@ -1,11 +1,10 @@
 import {Component} from 'angular2/core';
 import {Servizio} from '../services/servizio';
+import CountTPL from './count.html';
 
 @Component({
   selector: 'count',
-  template: `<p>{{TEXT}} -> <strong>{{count}}</strong></p>
-    <button (click)="dec()">-1</button>
-  `
+  template: CountTPL
 })
 
 export class Count {
