@@ -6,6 +6,7 @@ let config = require('./index').client;
 
 module.exports = {
   entry: {
+    lbservices: './client/lb-services.js',
     boot: './client/boot.js',
     vendor: './client/vendor.js'
   },
